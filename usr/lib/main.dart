@@ -1,120 +1,193 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 void main() {
-  runApp(const MyApp());
+  runApp(const B44ServicesApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class B44ServicesApp extends StatelessWidget {
+  const B44ServicesApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
+      title: "B44 Services App",
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: const HomeScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class Official {
+  final String name;
+  final String position;
+  final String contactNumber;
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  Official(
+      {required this.name, required this.position, required this.contactNumber});
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class Hotline {
+  final String name;
+  final String contactNumber;
+  final IconData icon;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  Hotline(
+      {required this.name, required this.contactNumber, required this.icon});
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
+    final List<Official> officials = [
+      Official(
+          name: "Hon. Tito C. Villanueva",
+          position: "Barangay Captain",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Hon. Edson C. Sotto",
+          position: "Kagawad",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Hon. Antonio B. Baria Jr.",
+          position: "Kagawad",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Hon. Arnulf Lorcha",
+          position: "Kagawad",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Hon. Eddie Quintanilla",
+          position: "Kagawad",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Hon. Marcus Brian Asaytuno",
+          position: "Kagawad",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Hon. Nolan Puche",
+          position: "Kagawad",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Hon. Jason Dino",
+          position: "Kagawad",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Hon. Arjay Dino",
+          position: "SK Chairman",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Joy Alamil",
+          position: "Secretary",
+          contactNumber: "0912-345-6789"),
+      Official(
+          name: "Noel Esplana",
+          position: "Treasurer",
+          contactNumber: "0912-345-6789"),
+    ];
+
+    final List<Hotline> hotlines = [
+      Hotline(
+          name: "Philippine National Police Legazpi",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.local_police),
+      Hotline(
+          name: "Bureau of Fire Protection Legazpi",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.fire_truck),
+      Hotline(
+          name: "LGU Legazpi",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.location_city),
+      Hotline(
+          name: "Cdrrmo",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.emergency),
+      Hotline(
+          name: "City Health",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.local_hospital),
+      Hotline(
+          name: "Legazpi City Hospital",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.medical_services),
+      Hotline(
+          name: "Aleco",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.lightbulb),
+      Hotline(
+          name: "LCWD",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.water_drop),
+      Hotline(
+          name: "PAGASA",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.cloud),
+      Hotline(
+          name: "EQRT Legazpi",
+          contactNumber: "(052) 123-4567",
+          icon: Icons.warning),
+    ];
+
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("B44 Services App"),
+          bottom: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.people), text: "Officials"),
+              Tab(icon: Icon(Icons.phone), text: "Hotlines"),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            _buildOfficialsList(officials),
+            _buildHotlinesList(hotlines),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  Widget _buildOfficialsList(List<Official> officials) {
+    return ListView.builder(
+      itemCount: officials.length,
+      itemBuilder: (context, index) {
+        final official = officials[index];
+        return Card(
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          child: ListTile(
+            leading: const Icon(Icons.person),
+            title: Text(official.name),
+            subtitle: Text(official.position),
+            trailing: Text(official.contactNumber),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildHotlinesList(List<Hotline> hotlines) {
+    return ListView.builder(
+      itemCount: hotlines.length,
+      itemBuilder: (context, index) {
+        final hotline = hotlines[index];
+        return Card(
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          child: ListTile(
+            leading: Icon(hotline.icon),
+            title: Text(hotline.name),
+            trailing: Text(hotline.contactNumber),
+          ),
+        );
+      },
     );
   }
 }
